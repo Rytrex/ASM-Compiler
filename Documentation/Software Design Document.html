@@ -1,0 +1,104 @@
+<html>
+<head>
+  <title>Software Design Document</title>
+</head>
+<body>
+  <h1>Compiler</h1>
+  <h2>Overview</h2>
+  This compiler takes in a Mini Pascal file and outputs a MIPS Assembly file. It converts the Mini Pascal code into MIPS Assembly.
+  We used JFlex to create our scanner and a lookup table to create the TokenTypes for each word passed into the program. The parser
+  uses recursion to match all of the proper TokenTypes to each word passed in. The SymbolTable contains Symbols that hold the different
+  IDs, VARs, PROGRAMs, ARRAYs, and FUNCTIONs. When they are suppose to show up in the parser, they are added to the SymbolTable. If
+  a duplicate shows up, it prints an error and exits. While scanning the Pascal file, it creates different nodes for each of the
+  different keywords in Pascal. It creates a tree of nodes that hold all of the information needed to make the Assembly file.
+  After the program identifies all of the Pascal's programs, subprograms, declared variables, and the program's main, it will start
+  to build the Assembly file based on the tree generated while reading through the Pascal file. When it is done creating the
+  Assembly file, it saves it to a file in the same location.
+
+  <h2>Design</h2>
+  <h3>CompilerMain</h3>
+    <img style="max-width:100%" src="diagram.png"></img>
+  <h3>Parser</h3>
+    <img style="max-width:100%" src="parser.png"></img>
+  <h3>Scanner</h3>
+    <img style="max-width:100%" src="scanner.png"></img>
+  <h3>SyntaxTree</h3>
+    <img style="max-width:100%" src="syntaxtree.png"></img>
+  <h3>SemanticAnalysis</h3>
+    <img style="max-width:100%" src="analysis.png"></img>
+  <h3>CodeGeneration</h3>
+    <img style="max-width:100%" src="codegen.png"></img>
+  <h2>Change Log</h2>
+  10 January 2017
+  <ul>
+    <li>Imported MyScanner from another repo</li>
+  </ul>
+  20 January 2017
+  <ul>
+    <li>Added JUnit Testing</li>
+  </ul>
+  31 January 2017
+  <ul>
+    <li>Started Parser</li>
+  </ul>
+  2 February 2017
+  <ul>
+    <li>Added error statements to methods without lambdas and filled in more methods</li>
+    <li>Added Comments to Parser.java</li>
+  </ul>
+  3 February 2017
+  <ul>
+    <li>Added comments to all other files</li>
+    <li>Added ReadMe.md</li>
+    <li>Added Software Design Document.html</li>
+    <li>Added diagram.jpg</li>
+  </ul>
+  4 February 2017
+  <ul>
+    <li>Added ParserTest.java</li>
+  </ul>
+  9 February 2017
+  <ul>
+    <li>Added SymbolTable.java that contains a Symbol class</li>
+  </ul>
+  11 February 2017
+  <ul>
+    <li>Added SymbolTableTest.java</li>
+  </ul>
+  18 February 2017
+  <ul>
+    <li>Integrated SymbolTable in Parser</li>
+    <li>Updated SymbolTableTest</li>
+  </ul>
+  7 March 2017
+  <ul>
+    <li>Started SyntaxTree integration into Parser</li>
+  </ul>
+  15 March 2017
+  <ul>
+    <li>Added new nodes to the SyntaxTree</li>
+    <li>Updated Parser</li>
+    <li>Added ArrayNode to the SyntaxTree</li>
+  </ul>
+  25 March 2017
+  <ul>
+    <li>Added Semantic Analysis</li>
+  </ul>
+  15 April 2017
+  <ul>
+    <li>Added Code Folding</li>
+    <li>Finished Parser</li>
+    <li>Updated Software Design Document</li>
+  </ul>
+  23 April 2017
+  <ul>
+    <li>Added Code Generation</li>
+    <li>Added Compiler.jar</li>
+    <li>Added Function, Read, and Write nodes to the Syntax Tree</li>
+    <li>Updated Symbol Table to handle multiple HashMaps</li>
+    <li>Updated Software Design Document</li>
+    <li>Updated JavaDocs</li>
+    <li>Organized files</li>
+  </ul>
+</body>
+</html>

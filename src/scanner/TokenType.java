@@ -1,0 +1,20 @@
+package scanner;
+
+/**
+ * TokenTypes are ENUMs defined for different keywords and identifier types
+ * @author Don Vo
+ */
+public enum TokenType {
+	//Standard keywords
+	AND, ARRAY, BEGIN, DIV, DO, ELSE, END, FUNCTION, IF,
+	INTEGER, MOD, NOT, OF, OR, PROCEDURE, PROGRAM, REAL,
+	THEN, VAR, WHILE,
+	//Symbols, assign, and comparisons
+	SEMI_COLON, COMMA, PERIOD, COLON, LEFT_SQUARE_BRACKET,
+	RIGHT_SQUARE_BRACKET, LEFT_PARENTHESIS, RIGHT_PARENTHESIS,
+	PLUS, MINUS, EQUALS, LESS_THAN_GREATER_THAN, LESS_THAN,
+	LESS_THAN_EQUALS_TO, GREATER_THAN, GREATER_THAN_EQUAL_TO,
+	ASTERISK, FORWARD_SLASH, COLON_EQUALS_TO,
+	//Numbers and ID
+	NUMBER, ID
+}
